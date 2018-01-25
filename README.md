@@ -171,3 +171,10 @@ router.get( '/', (req, res) => {
 });
 ```
 > Il faut ensuite l'importer dans `server.js`et la configurer de la même manière que la route front.
+
+
+
+<br>
+
+## Utilisation de MongoBD
+L'installatio  et la configuration de MongoDB est disponible à cette adresse (https://github.com/DWS-paris/MONGOstack/wiki)

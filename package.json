@@ -1,0 +1,26 @@
+{
+  "name": "mean-blog-h3-hetic",
+  "version": "1.0.0",
+  "description": "Mise la place d'un serveur NodeJS avec des vues HTML",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DWS-paris/HETIC_h3_node_QS.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DWS-paris/HETIC_h3_node_QS/issues"
+  },
+  "homepage": "https://github.com/DWS-paris/HETIC_h3_node_QS#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "nodemon": "^1.14.11",
+    "path": "^0.12.7"
+  }
+}

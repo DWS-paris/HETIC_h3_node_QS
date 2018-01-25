@@ -1,22 +1,54 @@
 /*
 Importer les composant du module de route
 */
-const express = require('express');
-const router = express.Router();
+    const express = require('express');
+    const router = express.Router();
+
+    // Importer Mongoose
+    const mongoose = require('mongoose');
+    const mongodbUrl = 'mongodb://localhost:27018/blog';
 //
+
 
 /*
 Définition des routes front
 */
-router.get('/', (req, res) => {
-    // Renvoyer le fichier 'index' dans la réponse
-    res.json({msg: 'Hello API'});
-});
+    router.get('/', (req, res) => {
+        // Renvoyer un flux JSON dans la réponse
+        res.json( { content: 'Hello API' } );
+    });
+
+    router.get('/posts/', (req, res) => {
+
+        // Connexion à la base de données MongoDb
+        mongoose.connect(mongodbUrl, (err, db) =>{
+
+            // Tester la connexion
+            if(err){ res.send(err) } 
+            else {
+    
+                // Récupération des documents de la collection 'list' => find
+                db.collection('posts').find().toArray((err, posts) => {
+    
+                    // Tester la commande MongoDb
+                    if(err){ res.send(err) }
+    
+                    else{ 
+                        // Envoyer les données au format json
+                        res.json(posts)
+                    };
+                });
+            };
+    
+            // Fermer la connexion à la base MongoDb
+            db.close();
+        });
+    });
 //
 
 
 /*
 Expoter le module de route
 */
-module.exports = router;
+    module.exports = router;
 //

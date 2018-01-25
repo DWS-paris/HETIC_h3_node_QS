@@ -6,17 +6,19 @@ Importer les composant du module de route
 
     // Importer Mongoose
     const mongoose = require('mongoose');
+    // Définir l'adressez de la BDD
     const mongodbUrl = 'mongodb://localhost:27018/blog';
 //
 
 
 /*
 Définition des routes front
-*/
+*/ 
     router.get('/', (req, res) => {
         // Renvoyer un flux JSON dans la réponse
         res.json( { content: 'Hello API' } );
     });
+
 
     router.get('/posts/', (req, res) => {
 
@@ -27,7 +29,7 @@ Définition des routes front
             if(err){ res.send(err) } 
             else {
     
-                // Récupération des documents de la collection 'list' => find
+                // Récupération des documents de la collection 'posts' => find
                 db.collection('posts').find().toArray((err, posts) => {
     
                     // Tester la commande MongoDb

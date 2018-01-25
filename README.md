@@ -10,6 +10,7 @@ Suivre les indications du terminal.
 
 Créer un fichier pour le serveur, à la base le fichier s'appelle `index.js`mais nous changeons ce ,nom par `server.js`.
 
+
 ## Installer les dépendances
 Pour créer un serveur NodeJS en utilisant le framework ExpressJS, il faut commencer par l'installer sur le serveur avec la commande :
 ```
@@ -30,6 +31,7 @@ Les vues du clients vont être configurer en HTML pour correspondre à l'afficha
 ```
 npm install --save ejs
 ```
+
 
 ## Monter le serveur NodeJS
 Chaque dépendances doit être importer dans le fichier `server.js` dans des constantes, sauf `body-parser` qui sera importer dans les fichiers de route :
@@ -68,6 +70,7 @@ Lancer le serveur
 //
 ```
 
+
 ## Lancer le serveur
 Pour lancer le serveur, il y 3 méthodes possibles :
 ```
@@ -96,6 +99,7 @@ Il faut ensuite modifier le script dans le fichier `package.json` de la façon s
 ...
 ```
 > Une fois le script modifié, la commande `npm start` lance l'écouteur `nodemon`.
+
 
 ## Création de la route front
 Un serveur NodeJS doit être configurer sur toutes les étapes, comme pour la création des routes. Nous allons préparer le route pour les vues client. Créer un fichier nommé `front.js` dans un dossier nommé `routes` à la racine du serveur.
@@ -149,6 +153,7 @@ app.set( 'view engine', 'html' );
 > Pour finir, il faut créer une fichier nommé `index.html` dans le dossier `www`.
 
 La page d'accueil du serveur affiche à présent le fichier `index.html`. Bravo - Brava !
+
 
 ## Ajouter une route API
 La route API et construite de la même manière que la route front, il faut donc dupliquer la route front et la mettre à jour pour qu'elle corresponde à une API, la seule différence se tropuve dans la réponse :

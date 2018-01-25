@@ -159,9 +159,3 @@ router.get( '/', (req, res) => {
 });
 ```
 > Il faut ensuite l'importer dans `server.js`et la configurer de la même manière que la route front.
-
-Notre projet va utiliser une base de données MYsql, il faut donc ajouter une dépendance à notre serveur pour pouvoir utiliser cette BBDD (https://www.npmjs.com/package/mysql) : 
-```
-npm install --save mysql
-```
-> Il faut ensuite configurer le module dans le route API.

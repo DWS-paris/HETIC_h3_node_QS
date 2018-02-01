@@ -20,11 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .then( data => data.json() )
 
             // Manipuler les données de la réponse
-            .then(data =>  appendHtmlTags(data) )
+            .then(data =>  {
+                console.log(data)
+                document.querySelector('#apiResponse').innerHTML = data[0].title;
+            })
 
             // Capter l'erreur
             .catch((err) =>  console.log(err) );
         }
     //
+    
+    asyncLoadFunction('http://localhost:3000/api/posts');
 
 });
